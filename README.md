@@ -16,7 +16,7 @@ Credits dotfiles: [**`mmsaeed509`**](https://github.com/mmsaeed509/bspwm-dots)
   <img src="https://img.shields.io/github/languages/code-size/mmsaeed509/bspwm-dots?color=yellow&style=for-the-badge">
   <img src="https://img.shields.io/github/last-commit/mmsaeed509/bspwm-dots?color=deeppink&style=for-the-badge">
 </p>
-
+<br>
 <img src="img/deep.png" align="right" width="500px">
 
 <h1 align="left"> :herb: about</h1>
@@ -42,7 +42,7 @@ Credits dotfiles: [**`mmsaeed509`**](https://github.com/mmsaeed509/bspwm-dots)
 
 |:shamrock: BSPWM|
 |--|
-| <img src="img/deep.png" |
+| <img src="img/deep.png"> |
 
 </center>
 
