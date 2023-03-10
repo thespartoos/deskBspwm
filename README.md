@@ -14,7 +14,7 @@ Credits dotfiles: [**`mmsaeed509`**](https://github.com/mmsaeed509/)
 
 </br>
 
- - OS: [**`Exodia OS`**](https://www.kali.org/)
+ - OS: [**`Kali Linux`**](https://www.kali.org/)
  - WM: [**`bspwm`**](https://github.com/baskerville/bspwm) 
  - Bar: [**`Polybar`**](https://github.com/polybar/polybar)
  - Compositor: [**`picom`**](https://github.com/yshui/picom)
