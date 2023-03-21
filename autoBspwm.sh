@@ -71,7 +71,7 @@ function module() {
 
   echo -e "\n${greenColour}[+]${endColour}${grayColour} La actualización del sistema ha sido completada"
   echo -e "\n${yellowColour}[*]${endColour}${grayColour} Instalalling dependencies${endColour}"
-  sudo apt-get install -y libxcb-xinerama0-dev libxcb-icccm4-dev libxcb-randr0-dev libxcb-util0-dev libxcb-ewmh-dev libxcb-keysyms1-dev libxcb-shape0-dev &>/dev/null
+  sudo apt-get install -y libxcb-xinerama0-dev libu2f-udev libxcb-icccm4-dev libxcb-randr0-dev libxcb-util0-dev libxcb-ewmh-dev libxcb-keysyms1-dev libxcb-shape0-dev &>/dev/null
   
   if [ "$(echo $?)" -eq 0 ]; then
     echo -e "\n${greenColour}[+] Dependencies was successfully installed${endColour}"
@@ -79,7 +79,7 @@ function module() {
     echo -e "eres un gringo"
   fi
 
-  sudo apt install git make gcc net-tools -y &>/dev/null
+  sudo apt install git make cava gcc net-tools -y &>/dev/null
   echo -e "\n${yellowColour}[*]${endColour}${grayColour} Clonando e instalando bspwm & sxhkd${endColour}"
   git clone https://github.com/baskerville/bspwm.git &>/dev/null
   git clone https://github.com/baskerville/sxhkd.git &>/dev/null
