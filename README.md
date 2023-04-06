@@ -80,7 +80,7 @@ chmod +x autoBspwm.sh
 
 ./autoBspwm.sh -t forest
 
-# change them
+# change theme
 
 ./autoBspwm.sh -c deep
 
