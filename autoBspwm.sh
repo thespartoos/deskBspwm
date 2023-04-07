@@ -61,7 +61,7 @@ function module() {
 
   echo -e "\n${yellowColour}[*]${endColour}${grayColour} Realizando una actualizacion al sistema${endColour}"
   echo -e "\n${redColour}[!]${endColour}${grayColour} A continuacion se utilizara ${endColour}${yellowColour}sudo${endColour}${grayColour} para poder iniciar la installation${endColour}\n"
-  #sleep 2; sudo apt update -y &>/dev/null && sudo apt upgrade -y &>/dev/null && sudo apt install bspwm -y &>/dev/null
+  sleep 2; sudo apt update -y &>/dev/null && sudo apt upgrade -y &>/dev/null && sudo apt install bspwm -y &>/dev/null
   tput civis
   if [ "$(echo $?)" -eq 0 ]; then
     echo -e "\n${greenColour}[+] System was successfully installed${endColour}"
@@ -101,8 +101,6 @@ function module() {
   chmod +x ~/.config/bspwm/bspwmrc
   rm -rf ~/.config/sxhkd/ &>/dev/null
   cp -r themes/$theme/dotfiles/sxhkd/ ~/.config/
-
-# sed 's/home\/thespartoos/$USER/'
 
   sed "s/home\/thespartoos/home\/$username/g" ~/.config/bspwm/bspwmrc > ~/.config/bspwm/bspwmrc2
   rm -f ~/.config/bspwm/bspwmrc && mv ~/.config/bspwm/bspwmrc2 ~/.config/bspwm/bspwmrc
