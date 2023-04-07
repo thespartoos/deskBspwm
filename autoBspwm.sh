@@ -61,7 +61,7 @@ function module() {
 
   echo -e "\n${yellowColour}[*]${endColour}${grayColour} Realizando una actualizacion al sistema${endColour}"
   echo -e "\n${redColour}[!]${endColour}${grayColour} A continuacion se utilizara ${endColour}${yellowColour}sudo${endColour}${grayColour} para poder iniciar la installation${endColour}\n"
-  sleep 2; sudo apt update -y &>/dev/null && sudo apt upgrade -y &>/dev/null && sudo apt install bspwm -y &>/dev/null
+  #sleep 2; sudo apt update -y &>/dev/null && sudo apt upgrade -y &>/dev/null && sudo apt install bspwm -y &>/dev/null
   tput civis
   if [ "$(echo $?)" -eq 0 ]; then
     echo -e "\n${greenColour}[+] System was successfully installed${endColour}"
@@ -297,10 +297,10 @@ function module() {
   sleep 2; clear
   
   echo -e "\n${yellowColour}[*]${endColour}${grayColour} Installing${endColour}${blueColour} lsd${endColour} ${purpleColour}&&${endColour}${blueColour} bat${endColour}"
-  wget https://github.com/sharkdp/bat/releases/download/v0.22.1/bat_0.22.1_amd64.deb &>/dev/null
+  sudo wget https://github.com/sharkdp/bat/releases/download/v0.22.1/bat_0.22.1_amd64.deb &>/dev/null
   sudo dpkg -i bat_0.22.1_amd64.deb &>/dev/null
   
-  wget https://github.com/Peltoche/lsd/releases/download/0.23.1/lsd-musl_0.23.1_amd64.deb &>/dev/null
+  sudo wget https://github.com/Peltoche/lsd/releases/download/0.23.1/lsd-musl_0.23.1_amd64.deb &>/dev/null
   sudo dpkg -i lsd-musl_0.23.1_amd64.deb &>/dev/null
 
   rm -rf bat_0.22.1_amd64.deb lsd-musl_0.23.1_amd64.deb 2>/dev/null
@@ -314,13 +314,13 @@ function module() {
   echo -e "\n${yellowColour}[*]${endColour}${grayColour} Configurating ${endColour}${blueColour}.zshrc ${endColour}${purpleColour}variables and functions${endColour}"
   sudo usermod -s /bin/zsh root 2>/dev/null
   rm -rf ~/.zshrc 2>/dev/null
-  sed -i 's/thespartoos/$username/' $local/themes/$theme/dotfiles/zsh/.zshrc 2>/dev/null
+  sed -i 's/thespartoos/$USER/' $local/themes/$theme/dotfiles/zsh/.zshrc 2>/dev/null
   cp $local/themes/$theme/dotfiles/zsh/.zshrc ~/
   sudo ln -s -f $homerealpath/.zshrc /root/.zshrc 
   sudo apt install scrub zsh-syntax-highlighting zsh-autosuggestions -y &>/dev/null
   sudo mkdir /usr/share/zsh-sudo/ 2>/dev/null
   sudo cp $local/themes/$theme/dotfiles/zsh/sudo.plugin.zsh /usr/share/zsh-sudo 2>/dev/null
-
+rm -rf /usr/local/share/zsh/site-functions/_bspc
   if [ "$(echo $?)" -eq 0 ]; then
     echo -e "\n${greenColour}[+]${endColour}${blueColour} .zshrc${endColour}${greenColour} was successfully configurated${endColour}"
   else
@@ -332,22 +332,26 @@ function module() {
 
 function changeTheme() {
 
-  echo -e "${yellowColour}[*]${endColour}${grayColour} Changing${endColour}${blueColour} theme${endColour}"; sleep 2
-  rm -rf ~/.config/polybar 2>/dev/null
-  cp -r themes/$theme/dotfiles/polybar ~/.config 2>/dev/null && chmod +x -R ~/.config/polybar 2>/dev/null
-  rm -rf ~/.config/kitty 2>/dev/null
-  cp -r themes/$theme/dotfiles/kitty ~/.config 2>/dev/null
-  rm -rf ~/.config/bin 2>/dev/null
-  cp -r themes/$theme/dotfiles/bin ~/.config 2>/dev/null && chmod +x -R ~/.config/bin 2>/dev/null
-  rm -rf ~/.config/dunst 2>/dev/null
-  kill $(ps -faux | grep -i "dunst" | awk 'NF{print $NF}' | grep "dunstrc" | tail -n 1) 2>/dev/null
-  cp -r themes/$theme/dotfiles/dunst ~/.config 2>/dev/null
-  rm -rf ~/.config/rofi 2>/dev/null
-  cp -r themes/$theme/dotfiles/rofi ~/.config 2>/dev/null && chmod +x -R ~/.config/rofi 2>/dev/null
-  rm ~/Escritorio/$username/Images/bg.png 2>/dev/null
-  cp -r themes/$theme/dotfiles/bg.png ~/Escritorio/$username/Images/ 2>/dev/null
-  echo -e "${greenColour}[+] The change was successfully did it"
-
+  if [ "$(id -u)" -ne 0 ]; then
+    echo -e "${yellowColour}[*]${endColour}${grayColour} Changing${endColour}${blueColour} theme${endColour}"; sleep 2
+    rm -rf ~/.config/polybar 2>/dev/null
+    cp -r themes/$theme/dotfiles/polybar ~/.config 2>/dev/null && chmod +x -R ~/.config/polybar 2>/dev/null
+    rm -rf ~/.config/kitty 2>/dev/null
+    cp -r themes/$theme/dotfiles/kitty ~/.config 2>/dev/null
+    rm -rf ~/.config/bin 2>/dev/null
+    cp -r themes/$theme/dotfiles/bin ~/.config 2>/dev/null && chmod +x -R ~/.config/bin 2>/dev/null
+    rm -rf ~/.config/dunst 2>/dev/null
+    kill $(ps -faux | grep -i "dunst" | awk 'NF{print $NF}' | grep "dunstrc" | tail -n 1) 2>/dev/null
+    cp -r themes/$theme/dotfiles/dunst ~/.config 2>/dev/null
+    rm -rf ~/.config/rofi 2>/dev/null
+    cp -r themes/$theme/dotfiles/rofi ~/.config 2>/dev/null && chmod +x -R ~/.config/rofi 2>/dev/null
+    rm ~/Escritorio/$username/Images/bg.png 2>/dev/null
+    cp -r themes/$theme/dotfiles/bg.png ~/Escritorio/$username/Images/ 2>/dev/null
+    echo -e "${greenColour}[+] The change was successfully did it"
+  else
+    echo -e "${redColour}[!]${endColour} ${grayColour}Debes ejecutarlo sin root${endColour}"
+    exit 0
+  fi
 }
 
 
