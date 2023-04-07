@@ -302,8 +302,8 @@ function module() {
   
   sudo wget https://github.com/Peltoche/lsd/releases/download/0.23.1/lsd-musl_0.23.1_amd64.deb &>/dev/null
   sudo dpkg -i lsd-musl_0.23.1_amd64.deb &>/dev/null
-
-  rm -rf bat_0.22.1_amd64.deb lsd-musl_0.23.1_amd64.deb 2>/dev/null
+  
+  sudo rm -rf bat_0.22.1_amd64.deb lsd-musl_0.23.1_amd64.deb 2>/dev/null
   
   if [ "$(echo $?)" -eq 0 ]; then
     echo -e "\n${greenColour}[+]${endColour}${blueColour} lsd${endColour}${purpleColour} &&${endColour}${blueColour} bat${endColour}${greenColour} was successfully installed and configurated${endColour}"
@@ -320,7 +320,7 @@ function module() {
   sudo apt install scrub zsh-syntax-highlighting zsh-autosuggestions -y &>/dev/null
   sudo mkdir /usr/share/zsh-sudo/ 2>/dev/null
   sudo cp $local/themes/$theme/dotfiles/zsh/sudo.plugin.zsh /usr/share/zsh-sudo 2>/dev/null
-rm -rf /usr/local/share/zsh/site-functions/_bspc
+  sudo rm -rf /usr/local/share/zsh/site-functions/_bspc
   if [ "$(echo $?)" -eq 0 ]; then
     echo -e "\n${greenColour}[+]${endColour}${blueColour} .zshrc${endColour}${greenColour} was successfully configurated${endColour}"
   else
