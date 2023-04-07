@@ -18,8 +18,8 @@ function ctrl_c(){
 
 # VARIABLES GLOBALES
 
-declare -r username=$(echo "$USER")
-declare -r homepath=$(echo "$HOME")
+declare -r username="$(echo $USER)"
+declare -r homepath="$(echo $HOME)"
 declare -r local="$(pwd)"
 
 # CTRL + C
