@@ -312,7 +312,7 @@ function module() {
   echo -e "\n${yellowColour}[*]${endColour}${grayColour} Configurating ${endColour}${blueColour}.zshrc ${endColour}${purpleColour}variables and functions${endColour}"
   sudo usermod -s /bin/zsh root 2>/dev/null
   rm -rf ~/.zshrc 2>/dev/null
-  sed -i "s/thespartoos/$username/" $local/themes/$theme/dotfiles/zsh/.zshrc 2>/dev/null
+  sed -i "s/\$username/$username/" $local/themes/$theme/dotfiles/zsh/.zshrc 2>/dev/null
   cp $local/themes/$theme/dotfiles/zsh/.zshrc ~/
   sudo ln -s -f $homerealpath/.zshrc /root/.zshrc 
   sudo apt install scrub zsh-syntax-highlighting zsh-autosuggestions -y &>/dev/null
