@@ -66,7 +66,7 @@ function module() {
   if [ "$(echo $?)" -eq 0 ]; then
     echo -e "\n${greenColour}[+] System was successfully installed${endColour}"
   else
-    echo -e "eres un gringo"
+    echo -e "${redColour}[!]${endColour} ${grayColour}There was an error in the execution${endColour}"
   fi
 
   echo -e "\n${greenColour}[+]${endColour}${grayColour} La actualización del sistema ha sido completada"
@@ -76,7 +76,7 @@ function module() {
   if [ "$(echo $?)" -eq 0 ]; then
     echo -e "\n${greenColour}[+] Dependencies was successfully installed${endColour}"
   else
-    echo -e "eres un gringo"
+    echo -e "${redColour}[!]${endColour} ${grayColour}There was an error in the execution${endColour}"
   fi
 
   sudo apt install git make cava gcc net-tools -y &>/dev/null
@@ -92,7 +92,7 @@ function module() {
   if [ "$(echo $?)" -eq 0 ]; then
     echo -e "\n${greenColour}[+] Bspwm and sxhkd installation was successfully completed${endColour}"
   else
-    echo -e "eres un gringo"
+    echo -e "${redColour}[!]${endColour} ${grayColour}There was an error in the execution${endColour}"
   fi
 
   echo -e "\n${yellowColour}[*]${endColour}${grayColour} Configurating ${endColour}${blueColour}bspwm${endColour}${purpleColour} &&${endColour}${blueColour} sxhkd${endColour}${grayColour} files${endColour}"
@@ -110,7 +110,7 @@ function module() {
   if [ "$(echo $?)" -eq 0 ]; then
     echo -e "\n${greenColour}[+] Bspwm and sxhkd config was successfully completed${endColour}"
   else
-    echo -e "eres un gringo"
+    echo -e "${redColour}[!]${endColour} ${grayColour}There was an error in the execution${endColour}"
   fi
 
   sleep 2; clear
@@ -129,7 +129,7 @@ function module() {
   if [ "$(echo $?)" -eq 0 ]; then
     echo -e "\n${greenColour}[+] Picom was successfully installed${endColour}"
   else
-    echo -e "eres un gringo"
+    echo -e "${redColour}[!]${endColour} ${grayColour}There was an error in the execution${endColour}"
   fi
   
   echo -e "\n${yellowColour}[*]${endColour}${grayColour} Configurating picom${endColour}"
@@ -139,7 +139,7 @@ function module() {
   if [ "$(echo $?)" -eq 0 ]; then
     echo -e "\n${greenColour}[+] Picom was successfully configurated${endColour}"
   else
-    echo -e "eres un gringo"
+    echo -e "${redColour}[!]${endColour} ${grayColour}There was an error in the execution${endColour}"
   fi
 
   echo -e "\n${yellowColour}[*] Installing Polybar${endColour}"
@@ -155,7 +155,7 @@ function module() {
   if [ "$(echo $?)" -eq 0 ]; then
     echo -e "\n${greenColour}[+] Polybar was successfully installed${endColour}"
   else
-    echo -e "eres un gringo"
+    echo -e "${redColour}[!]${endColour} ${grayColour}There was an error in the execution${endColour}"
   fi
   
   sudo apt install kitty -y &>/dev/null
@@ -163,7 +163,7 @@ function module() {
   if [ "$(echo $?)" -eq 0 ]; then
     echo -e "\n${greenColour}[+] Kitty was successfully installed${endColour}"
   else
-    echo -e "eres un gringo"
+    echo -e "${redColour}[!]${endColour} ${grayColour}There was an error in the execution${endColour}"
   fi
 
   sleep 2; clear
@@ -174,7 +174,7 @@ function module() {
   if [ "$(echo $?)" -eq 0 ]; then
     echo -e "\n${greenColour}[+] Kitty Configuration was successfully applied${endColour}"
   else
-    echo -e "eres un gringo"
+    echo -e "${redColour}[!]${endColour} ${grayColour}There was an error in the execution${endColour}"
   fi
   
   echo -e "\n${yellowColour}[*]${endColour}${grayColour} Installing${endColour}${blueColour} Google Chrome${endColour}"
@@ -186,7 +186,7 @@ function module() {
   if [ "$(echo $?)" -eq 0 ]; then
     echo -e "${greenColour}[+]${endColour} ${blueColour}Google Chrome${endColour}${greenColour} was successfully installed${endColour}"
   else
-    echo -e "eres un gringo"
+    echo -e "${redColour}[!]${endColour} ${grayColour}There was an error in the execution${endColour}"
   fi
 
   echo -e "\n${yellowColour}[*]${endColour}${grayColour} Installing Latest version of ${endColour}${blueColour}Firefox${endColour}"
@@ -196,7 +196,7 @@ function module() {
   if [ "$(echo $?)" -eq 0 ]; then
     echo -e "\n${greenColour}[+]${endColour}${blueColour} Firefox${endColour}${grayColour} was successfully installed${endColour}"
   else
-    echo -e "eres un gringo"
+    echo -e "${redColour}[!]${endColour} ${grayColour}There was an error in the execution${endColour}"
   fi
   
   echo -e "\n${yellowColour}[*]${endColour}${grayColour} Installing ${endColour}${blueColour}Hack Nerd Fonts${endColour}${purpleColour} &&${endColour}${blueColour} Iosevka Font ${endColour}"
@@ -214,7 +214,7 @@ function module() {
   if [ "$(echo $?)" -eq 0 ]; then
     echo -e "\n${greenColour}[+]${endColour}${blueColour} Hack Nerd Fonts ${endColour}${purpleColour}&&${endColour}${blueColour} Iosevka${endColour}${greenColour} was successfully installed${endColour}"
   else
-    echo -e "eres un gringo"
+    echo -e "${redColour}[!]${endColour} ${grayColour}There was an error in the execution${endColour}"
   fi
 
   sleep 2; clear
@@ -234,7 +234,7 @@ function module() {
   if [ "$(echo $?)" -eq 0 ]; then
     echo -e "\n${greenColour}[+]${endColour}${blueColour} feh${endColour}${greenColour} was successfully installed${endColour}"
   else
-    echo -e "eres un gringo"
+    echo -e "${redColour}[!]${endColour} ${grayColour}There was an error in the execution${endColour}"
   fi
 
   echo -e "\n${yellowColour}[*]${endColour}${grayColour} Configurating${endColour}${blueColour} Polybar${endColour}"
@@ -247,7 +247,7 @@ function module() {
   if [ "$(echo $?)" -eq 0 ]; then
     echo -e "\n${greenColour}[+]${endColour}${blueColour} Polybar${endColour}${greenColour} was successfully configurated${endColour}"
   else
-    echo -e "eres un gringo"
+    echo -e "${redColour}[!]${endColour} ${grayColour}There was an error in the execution${endColour}"
   fi
 
   echo -e "\n${yellowColour}[*]${endColour}${grayColour} Installing${endColour}${blueColour} Dunst${endColour}${grayColour} and configurating"
@@ -259,7 +259,7 @@ function module() {
   if [ "$(echo $?)" -eq 0 ]; then
     echo -e "\n${greenColour}[+]${endColour}${blueColour} Dunst${endColour}${greenColour} was successfully installed and configurated${endColour}"
   else
-    echo -e "eres un gringo"
+    echo -e "${redColour}[!]${endColour} ${grayColour}There was an error in the execution${endColour}"
   fi
   rm -rf googl* 2>/dev/null
   sleep 2; clear
@@ -277,7 +277,7 @@ function module() {
   if [ "$(echo $?)" -eq 0 ]; then
     echo -e "\n${greenColour}[+]${endColour}${blueColour} zsh${endColour}${greenColour} was successfully installed and configurated${endColour}"
   else
-    echo -e "eres un gringo"
+    echo -e "${redColour}[!]${endColour} ${grayColour}There was an error in the execution${endColour}"
   fi
 
   echo -e "\n${yellowColour}[+]${endColour}${grayColour} Installing${endColour} ${blueColour}powerlevel10k${endColour}"
@@ -289,7 +289,7 @@ function module() {
   if [ "$(echo $?)" -eq 0 ]; then
     echo -e "\n${greenColour}[+]${endColour}${blueColour} powerlevel10k${endColour}${greenColour} was successfully installed and configurated${endColour}"
   else
-    echo -e "eres un gringo"
+    echo -e "${redColour}[!]${endColour} ${grayColour}There was an error in the execution${endColour}"
   fi
 
   sleep 2; clear
@@ -306,7 +306,7 @@ function module() {
   if [ "$(echo $?)" -eq 0 ]; then
     echo -e "\n${greenColour}[+]${endColour}${blueColour} lsd${endColour}${purpleColour} &&${endColour}${blueColour} bat${endColour}${greenColour} was successfully installed and configurated${endColour}"
   else
-    echo -e "eres un gringo"
+    echo -e "${redColour}[!]${endColour} ${grayColour}There was an error in the execution${endColour}"
   fi
 
   echo -e "\n${yellowColour}[*]${endColour}${grayColour} Configurating ${endColour}${blueColour}.zshrc ${endColour}${purpleColour}variables and functions${endColour}"
@@ -322,7 +322,7 @@ function module() {
   if [ "$(echo $?)" -eq 0 ]; then
     echo -e "\n${greenColour}[+]${endColour}${blueColour} .zshrc${endColour}${greenColour} was successfully configurated${endColour}"
   else
-    echo -e "eres un gringo"
+    echo -e "${redColour}[!]${endColour} ${grayColour}There was an error in the execution${endColour}"
   fi
     
   tput cnorm
