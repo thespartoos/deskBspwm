@@ -79,7 +79,7 @@ function module() {
     echo -e "${redColour}[!]${endColour} ${grayColour}There was an error in the execution${endColour}"
   fi
 
-  sudo apt install git make cava gcc net-tools -y &>/dev/null
+  sudo apt install git make cava gcc net-tools polybar -y &>/dev/null
   echo -e "\n${yellowColour}[*]${endColour}${grayColour} Clonando e instalando bspwm & sxhkd${endColour}"
   git clone https://github.com/baskerville/bspwm.git &>/dev/null
   git clone https://github.com/baskerville/sxhkd.git &>/dev/null
