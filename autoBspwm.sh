@@ -147,7 +147,7 @@ function module() {
   git clone --recursive https://github.com/polybar/polybar
   cd polybar
   mkdir build 2>/dev/null; cd build
-  cmake ..
+  cmake -DENABLE_PULSEAUDIO=ON ..
   make -j$(nproc)
   sudo make install
   cd ../../
