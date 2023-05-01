@@ -64,9 +64,11 @@ Credits dotfiles: [**`mmsaeed509`**](https://github.com/mmsaeed509/)
 
 ### Installation
 
+:warning:  As a normal user, not root
+
 ~~~bash
 
-git clone https://github.com/thespartoos/AutoBspwm
+git clone https://github.com/thespartoos/deskBspwm
 
 cd AutoBspwm
 
