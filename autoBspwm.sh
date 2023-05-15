@@ -312,7 +312,7 @@ function module() {
   echo -e "\n${yellowColour}[*]${endColour}${grayColour} Configurating ${endColour}${blueColour}.zshrc ${endColour}${purpleColour}variables and functions${endColour}"
   sudo usermod -s /bin/zsh root 2>/dev/null
   rm -rf ~/.zshrc 2>/dev/null
-  sed -i "s/\$username/$username/" $local/themes/$theme/dotfiles/zsh/.zshrc 2>/dev/null
+  sed -i "s/thespartoos/\$username/" $local/themes/$theme/dotfiles/zsh/.zshrc 2>/dev/null
   cp $local/themes/$theme/dotfiles/zsh/.zshrc ~/
   sudo ln -s -f $homerealpath/.zshrc /root/.zshrc 
   sudo apt install scrub zsh-syntax-highlighting zsh-autosuggestions -y &>/dev/null
@@ -321,10 +321,11 @@ function module() {
   sudo rm -rf /usr/local/share/zsh/site-functions/_bspc
   if [ "$(echo $?)" -eq 0 ]; then
     echo -e "\n${greenColour}[+]${endColour}${blueColour} .zshrc${endColour}${greenColour} was successfully configurated${endColour}"
+    echo -e "\n\n${greenColour}[+]${endColour}${grayColour} the script has successfully completed, restart and select bspwm${endColour}"
   else
     echo -e "${redColour}[!]${endColour} ${grayColour}There was an error in the execution${endColour}"
   fi
-    
+  
   tput cnorm
 }
 
